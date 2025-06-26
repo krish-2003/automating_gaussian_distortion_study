@@ -1,6 +1,6 @@
 # Automating Gaussian Distortion Study
 
-This repository contains a few codes which will be useful while working with the Gaussical Software while studying the intersystem crossing rates and molecular distortion studies. These scripts help to reduce the manual work and time consumption.
+This repository contains a set of Python scripts to automate the Gaussian calculations in studying the intersystem crossing rates and molecular distortion studies. These scripts help to reduce the manual work and time consumption.
 
 ## Scripts Overview
 
@@ -27,5 +27,9 @@ This repository contains a few codes which will be useful while working with the
   This script is specifically created to delete the checkpoint files and readwrite files of the binary file after running pysoc.py. As these files take a large amount of memory, deleting them after calculating SOC is better. While using, put this file in the same location where distort.py is located.
  
 ## Requirements
-> All these files require Python 3 to run smoothly.<br>
-> For the distortion script, we need a Fortran-based file to distort the normal modes.
+> Gaussian Software<br>
+> PySOC<br>
+> Python3<br>
+> Fortran
+
+
