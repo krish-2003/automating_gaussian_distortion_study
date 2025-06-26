@@ -1,5 +1,5 @@
 # Developed By Krushna Shete
-# This file is for both the positive and negative distortions. The active modes list can be provided at the end of the file.
+# The active modes list can be provided at the end of the file.
 
 import numpy as np
 import matplotlib.pyplot as plt
