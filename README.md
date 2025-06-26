@@ -4,8 +4,19 @@ This repository contains a few codes which will be useful while working with the
 
 ## Scripts Overview
 
-- **kisc.py**  
+- **kisc.py**
+  Calculates the intersystem crossing rate for a transition; it requires the user input of energies and the SOC value.
 
+- **kisc_calc.py**
+  This script needs the paths for the log files of singlet and triplet energies, and the path for the soc_out.dat file. It gives the output file     
+  containing the intersystem crossing rates for all transitions.
+
+- **calc.py**
+  This script automates the full sequential calculations from
+  - Optimization + Frequency(Opt+Freq)
+  - Energy 
+
+  
 kisc.py and kisc_calc.py are used to calculate the kisc rate from the singlet-triplet energies and the SOC value. 
 kisc.py is for individual transitions, while kisc_calc.py calculates the rate for all transitions.
 calc.py does sequential calculations for Opt+Freq, Vertical Excitation Energy, binary file, and finally PySOC for SOC values.
