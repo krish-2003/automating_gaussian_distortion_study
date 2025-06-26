@@ -1,6 +1,7 @@
 ## automating_gaussian_distortion_study
 
-These codes are useful to reduce the manual work while using the Gaussian software. 
+This repository contains a few codes which will be useful while working with the Gaussical Software while studying the intersystem crossing rates and molecular distortion studies. These scripts help to reduce the manual work and time consumption.
+
 kisc.py and kisc_calc.py are used to calculate the kisc rate from the singlet-triplet energies and the SOC value. 
 kisc.py is for individual transitions, while kisc_calc.py calculates the rate for all transitions.
 calc.py does sequential calculations for Opt+Freq, Vertical Excitation Energy, binary file, and finally PySOC for SOC values.
