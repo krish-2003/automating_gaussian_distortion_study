@@ -92,7 +92,7 @@ def get_delta_energy(soc,singlet_energies,triplet_energies):
             sing_energy = 0.0 if singlet_state == 'S0' else float(singlet_energies[singlet_state])
             trip_energy = float(triplet_energies[triplet_state])
             
-            delta_energy[(singlet_state, triplet_state)] = round(sing_energy - trip_energy, 4) # in eV
+            delta_energy[(singlet_state, triplet_state)] = round(np.abs(sing_energy - trip_energy), 4) # in eV
     
     return delta_energy
 
