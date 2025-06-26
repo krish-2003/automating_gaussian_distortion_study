@@ -81,7 +81,7 @@ def generate_energy_com_file(opt_freq_com_file, energy_com_file, geometry):
         file.writelines(additional_data)  # Append the remaining lines after geometry
     print(".com file for energy is completed")
 
-def soc_calculation(opt_freq_com_file, geometry):
+def soc_calculation(opt_freq_com_file, geometry,init_path):
     soc_file = opt_freq_com_file.replace('.com', '_soc')
 
     soc_initial = f"""%rwf=gaussian.rwf
@@ -141,7 +141,7 @@ def soc_calculation(opt_freq_com_file, geometry):
     
     print(f"gaussian.com file is written in {soc_folder} ")
 
-    init_py_path = "/home/krushnashete/semester_8/Minor/soc-trial/init.py"
+    init_py_path = init_path
     shutil.copy(init_py_path, soc_folder)
     print(f"Copied init.py to {soc_folder}")
 
@@ -172,7 +172,7 @@ def run_pysoc(com_file):
         return False
     return True
     
-def main(input_com_file):
+def main(input_com_file,init_path):
     # Run opt+freq calculations
     
     print(f"Running Gaussian for {input_com_file} (Opt+Freq)...")
@@ -188,7 +188,7 @@ def main(input_com_file):
     generate_energy_com_file(input_com_file, energy_file, optimized_geometry)
     
     # Assuming soc_calculation is a function that handles the spin-orbit coupling
-    soc_folder = soc_calculation(input_com_file, optimized_geometry)
+    soc_folder = soc_calculation(input_com_file, optimized_geometry,init_path)
     
     # Run the energy calculations
     print("\nRunning Gaussian for energy calculation...")
@@ -206,5 +206,6 @@ def main(input_com_file):
 
 if __name__ == "__main__":
     input_com_file = "sooos_opt+freq_b3lyp_631.com"  # Replace with your actual .com file
-    main(input_com_file)
+    init_path = "/home/krushnashete/semester_8/Minor/soc-trial/init.py"
+    main(input_com_file,init_path)
 
