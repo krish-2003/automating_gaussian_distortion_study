@@ -7,9 +7,6 @@ import subprocess
 cwd = os.getcwd()
 sing_folder = os.path.join(cwd,'singlets')
 
-gaus_folder = os.path.join(cwd,'gaus_folder')
-os.makedirs(gaus_folder, exist_ok=True)
-
 pattern = os.path.join(sing_folder,'*soc_dis*')
 soc_folder_list = glob.glob(pattern)
 
@@ -25,7 +22,6 @@ files = ['gaussian.chk', 'gaussian.rwf']
 
 for f in soc_folder_list:
 	for file_name in files:
-	
 		file_path = os.path.join(f,file_name)
 		print(file_path)
 		
