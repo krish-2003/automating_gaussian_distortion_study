@@ -17,7 +17,7 @@ E2 = float(input("Enter the Excited energy of Triplet state in ev: "))
 
 socme = float(input("Enter the SOC matrix element in cm-1: "))
 
-delta_E = (E1-E2)
+delta_E = np.abs(E1-E2)
 print(f"Energy difference in states is: {delta_E:.4f}")
 socme = cmiev(socme)
 
